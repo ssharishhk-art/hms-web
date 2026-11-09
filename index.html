@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HMS – Hospital Management System</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+<!--
+  HMS front-end prototype. The "DAO" section below simulates PatientDAO (in-memory + localStorage).
+  Spring Boot mapping later: addPatient -> POST /api/patients, getAllPatients -> GET /api/patients,
+  getPatientById -> GET /api/patients/{id}, updatePatient -> PUT /api/patients/{id}, deletePatient -> DELETE /api/patients/{id}.
+  Each controller would call the real PatientDAO (JDBC -> MySQL hospital_db).
+-->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="side" aria-label="Main"><div class="brand"><i>✚</i><div>HMS<small>Hospital Management</small></div></div><div id="nav" style="display:contents"></div></nav>
+<main>
+<div class="top"><input id="gs" type="search" placeholder="Search name or enter patient ID…" aria-label="Global search"><button class="btn gh" id="th" aria-label="Toggle dark mode">◐ Theme</button><div class="chip"><span class="av">AD</span><span>Admin</span></div></div>
+<div id="view"></div>
+<footer>Harish Kumar S · Kamaleshwaran G · Kanish S · Vignesh M — B.Tech AI &amp; DS, Rajalakshmi Engineering College · October 2026</footer>
+</main>
+<dialog id="dlg" aria-labelledby="dt"></dialog>
+<div id="toasts" role="status" aria-live="polite"></div>
+<aside id="sql"><button id="sqlt" aria-expanded="false">▸ SQL Console · Parameterized query – SQL injection safe</button><div id="sqlb"></div></aside>
+<script src="utils.js"></script>
+<script src="data.js"></script>
+<script src="prescription-data.js"></script>
+<script src="pages.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
